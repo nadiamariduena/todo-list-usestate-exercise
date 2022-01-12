@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+//
+const useInputValue = (initialState) => {};
+
 const Form = () => {
   //
   const [value, setValue] = useState("");
