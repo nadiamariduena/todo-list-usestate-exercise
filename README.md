@@ -3,6 +3,11 @@
 <br>
 <br>
 
+<details>
+<summary>  Unfold the Lesson ✋</summary>
+
+<br>
+
 ### Start by setting up the Form component
 
 <br>
@@ -542,5 +547,11 @@ export default Form;
   clear
 </button>
 ```
+
+[<img src="./src/img/todo-clear.gif"/>]()
+
+<br>
+
+ </details>
 
 [<img src="./src/img/todo-clear.gif"/>]()

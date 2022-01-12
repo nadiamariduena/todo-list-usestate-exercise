@@ -10,9 +10,10 @@ const Todo = () => {
   //
   return (
     <>
+      {" "}
       <div className="todo-container">
         <h1>to do list</h1>
-        <h2>To do Comp</h2>
+        <h2>Good Vibes!!</h2>
         <Form
           onSubmit={(text) => setTodos([{ text, complete: false }, ...todos])}
         />
@@ -26,7 +27,7 @@ const Todo = () => {
       </div>
       <button className="btn-card" type="button" onClick={() => setTodos([])}>
         clear
-      </button>
+      </button>{" "}
     </>
   );
 };

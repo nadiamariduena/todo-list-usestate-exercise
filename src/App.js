@@ -5,11 +5,11 @@ function App() {
   return (
     <>
       {" "}
-      <div className="page">
+      <main className="page">
         <div className="app">
           <Todo />
         </div>
-      </div>
+      </main>
     </>
   );
 }
