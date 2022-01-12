@@ -16,13 +16,9 @@ const Form = () => {
 
   //
   return (
-    <div>
+    <div className="input-container">
       <input {...text} className="form-input" placeholder="tell me something" />
-      <input
-        {...email}
-        className="form-input"
-        placeholder="tell me something"
-      />
+      <input {...email} className="form-input" placeholder="email me" />
     </div>
   );
 };
