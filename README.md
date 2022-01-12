@@ -451,4 +451,25 @@ return {
 <input {...text} placeholder="tell me something" />
 ```
 
-#### So what we can do is
+#### So what we can do, is restructure it add add the text and the reset together here:
+
+```javascript
+// after
+const { resetValue, ...text } = useInputValue("");
+
+// before
+const text = useInputValue("");
+```
+
+#### Then we can call the resetValue inside the form
+
+```javascript
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit(text.value);
+        resetValue();
+      }}
+    >
+```

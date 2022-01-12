@@ -13,7 +13,7 @@ const useInputValue = (initialState) => {
 
 const Form = ({ onSubmit }) => {
   // block 2
-  const text = useInputValue("");
+  const { resetValue, ...text } = useInputValue("");
 
   //
   return (
@@ -21,6 +21,7 @@ const Form = ({ onSubmit }) => {
       onSubmit={(e) => {
         e.preventDefault();
         onSubmit(text.value);
+        resetValue();
       }}
     >
       <input {...text} placeholder="tell me something" />
