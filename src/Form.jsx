@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 
 //
-const useInputValue = (initialState) => {};
+const useInputValue = (initialState) => {
+  const [value, setValue] = useState(initialState);
+  return {
+    value,
+    onChange: (e) => setValue(e.target.value),
+  };
+};
 
 const Form = () => {
   //
-  const [value, setValue] = useState("");
+  const text = useInputValue("");
   //
   return (
     <div>
-      <input
-        className="form-input"
-        placeholder="tell me something"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
+      <input {...text} className="form-input" placeholder="tell me something" />
     </div>
   );
 };

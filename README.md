@@ -63,17 +63,20 @@ const useInputValue = (initialState) => {
 ##### Then you will pass the line of code related to the target.value that was inside the _INPUT box_, and you will return it
 
 ```javascript
+// before
 return {
  value={value}
         onChange={(e) => setValue(e.target.value)
 
 }
-
+// after you included it inside the useInputValue
+  return {
+    value,
+    onChange: (e) => setValue(e.target.value),
+  };
 ```
 
-<br>
-
-#### Now lets assign the 'value' to the new function
+##### Now lets assign the 'value' to the new function
 
 ```javascript
 // before
@@ -81,6 +84,27 @@ const [value, setValue] = useState("");
 
 // after
 const text = useInputValue("");
+```
+
+<br>
+
+#### Now instead of passing this like that:
+
+```javascript
+<input
+  className="form-input"
+  placeholder="tell me something"
+  value={value}
+  onChange={(e) => setValue(e.target.value)}
+/>
+```
+
+#### Do this:
+
+- the **...** the spread operator is going to grab all the data we have inside the **text**, which is the data coming from the **useInputValue()**
+
+```javascript
+<input className="form-input" placeholder="tell me something" {...text} />
 ```
 
 <br>
