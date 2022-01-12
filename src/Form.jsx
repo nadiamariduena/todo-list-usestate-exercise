@@ -12,10 +12,17 @@ const useInputValue = (initialState) => {
 const Form = () => {
   //
   const text = useInputValue("");
+  const email = useInputValue("");
+
   //
   return (
     <div>
       <input {...text} className="form-input" placeholder="tell me something" />
+      <input
+        {...email}
+        className="form-input"
+        placeholder="tell me something"
+      />
     </div>
   );
 };

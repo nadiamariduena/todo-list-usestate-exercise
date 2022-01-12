@@ -103,6 +103,10 @@ const text = useInputValue("");
 
 - the **...** the spread operator is going to grab all the data we have inside the **text**, which is the data coming from the **useInputValue()**
 
+<br>
+
+<br>
+
 ```javascript
 <input className="form-input" placeholder="tell me something" {...text} />
 ```
@@ -165,4 +169,31 @@ const Form = () => {
 
 export default Form;
 
+```
+
+<br>
+
+#### As I said, we use this {...text} when we have different input fields
+
+- For example we can add another, this time we can add **email**
+
+```javascript
+const Form = () => {
+  //
+  const text = useInputValue("");
+  const email = useInputValue("");
+
+  //
+  return (
+    <div>
+      <input {...text} className="form-input" placeholder="tell me something" />
+      // //
+      <input
+        {...email}
+        className="form-input"
+        placeholder="tell me something"
+      />
+    </div>
+  );
+};
 ```
