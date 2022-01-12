@@ -332,17 +332,26 @@ setTodos([{ text, complete: false }]);
  ...todos])}
 ```
 
-<br>
-<br>
-
 ```javascript
 <Form onSubmit={(text) => setTodos([{ text, complete: false }, ...todos])} />
 ```
 
-<br>
-<br>
+##### Now let's render the 'todos' values
 
-#### Lets see what we have
+```javascript
+      <div>
+        {todos.map(({ text }) => (
+          <div key={text} className="todo-result">
+            <p>{text}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+```
+
+### Lets see what we have
 
 ```javascript
 import React, { useState } from "react";
@@ -409,10 +418,7 @@ const Form = ({ onSubmit }) => {
 export default Form;
 ```
 
+<br>
+<br>
+
 [<img src="./src/img/todo-basic.gif"/>]()
-
-#### Now let's render the 'todos' values
-
-```javascript
-
-```
