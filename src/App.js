@@ -1,11 +1,12 @@
 import "./scss/main.scss";
+import Todo from "./Todo";
 
 function App() {
   return (
     <>
       {" "}
       <div className="App">
-        <h1>to do list</h1>
+        <Todo />
       </div>
     </>
   );

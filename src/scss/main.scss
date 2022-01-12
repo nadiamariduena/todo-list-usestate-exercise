@@ -1,3 +1,6 @@
+@import "_fonts";
+//
+//
 ::before,
 ::after,
 * {
@@ -12,7 +15,7 @@ body {
   height: 100%;
 }
 
-#page {
+.App {
   display: flex;
   flex-wrap: wrap;
 }
@@ -33,3 +36,25 @@ body::-webkit-scrollbar-thumb {
 
 /* --------------- */
 /* --------------- */
+
+.todo-container {
+  margin-top: 2rem;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: "CoffekanRegular";
+  font-size: 3rem;
+  font-weight: 600;
+}
+h2 {
+  margin-top: 1em;
+  font-family: "Poppins-Light";
+  font-size: 1.2rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
