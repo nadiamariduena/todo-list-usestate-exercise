@@ -320,13 +320,13 @@ const [todos, setTodos] = useState([]);
 setTodos([{ text, complete: false }]);
 ```
 
-#### at the beginning we are going to create a new 'todos'
+##### at the beginning we are going to create a new 'todos'
 
 ```javascript
 ([{  text, complete: false
 ```
 
-#### and then we're gonna keep all the original 'todos' values that were there
+##### and then we're gonna keep all the original 'todos' values that were there
 
 ```javascript
  ...todos])}
@@ -341,6 +341,75 @@ setTodos([{ text, complete: false }]);
 
 <br>
 <br>
+
+#### Lets see what we have
+
+```javascript
+import React, { useState } from "react";
+import Form from "./Form";
+
+const Todo = () => {
+  //
+  const [todos, setTodos] = useState([]);
+
+  //
+  //
+  return (
+    <>
+      <div className="todo-container">
+        <h1>to do list</h1>
+        <h2>To do Comp</h2>
+        <Form
+          onSubmit={(text) => setTodos([{ text, complete: false }, ...todos])}
+        />
+      </div>{" "}
+      <div>
+        {todos.map(({ text }) => (
+          <div key={text} className="todo-result">
+            <p>{text}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default Todo;
+```
+
+```javascript
+import React, { useState } from "react";
+
+//block 1
+const useInputValue = (initialState) => {
+  const [value, setValue] = useState(initialState);
+  return {
+    value,
+    onChange: (e) => setValue(e.target.value),
+  };
+};
+
+const Form = ({ onSubmit }) => {
+  // block 2
+  const text = useInputValue("");
+
+  //
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit(text.value);
+      }}
+    >
+      <input {...text} placeholder="tell me something" />
+    </form>
+  );
+};
+
+export default Form;
+```
+
+[<img src="./src/img/todo-basic.gif"/>]()
 
 #### Now let's render the 'todos' values
 
