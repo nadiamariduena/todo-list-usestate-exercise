@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-//
+//block 1
 const useInputValue = (initialState) => {
   const [value, setValue] = useState(initialState);
   return {
@@ -9,17 +9,21 @@ const useInputValue = (initialState) => {
   };
 };
 
-const Form = () => {
-  //
+const Form = ({ onSubmit }) => {
+  // block 2
   const text = useInputValue("");
-  const email = useInputValue("");
 
   //
   return (
-    <div className="input-container">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit(text.value);
+      }}
+      className="form-input"
+    >
       <input {...text} className="form-input" placeholder="tell me something" />
-      <input {...email} className="form-input" placeholder="email me" />
-    </div>
+    </form>
   );
 };
 

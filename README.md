@@ -197,3 +197,65 @@ const Form = () => {
   );
 };
 ```
+
+<br>
+<br>
+
+# 🍊
+
+### Now lets add the onSubmit event
+
+> The onsubmit event is an event that occurs when you try to submit a form.
+
+```javascript
+ onSubmit={(e) => e.preventDefault()
+```
+
+> The e in e. preventDefault prevents the default action when a link is clicked, which is the page refreshing or changing. **So it allows for behavior such as clicking on a link making a call to the database without a page refresh**.
+
+<br>
+
+##### Now pass the ({onSubmit}) prop here:
+
+```javascript
+const Form = ({onSubmit}) => {
+  //
+
+
+```
+
+<br>
+
+#### This onSubmit is going to help to pass the data from block 1 to block 2
+
+```javascript
+//block 1
+const useInputValue = (initialState) => {
+  const [value, setValue] = useState(initialState);
+  return {
+    value,
+    onChange: (e) => setValue(e.target.value),
+  };
+};
+
+const Form = ({ onSubmit }) => {
+  // block 2
+  const text = useInputValue("");
+
+  //
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+      className="input-container"
+    >
+      <input {...text} className="form-input" placeholder="tell me something" />
+    </form>
+  );
+};
+
+export default Form;
+```
+
+#### GRab the value from block 1 and pass it to block 2, using the text, through the onSubmit
