@@ -10,14 +10,77 @@
 }
 
 body {
-  background-color: rgb(240, 237, 233);
   overflow-x: hidden;
   height: 100%;
 }
 
-.App {
+.page {
   display: flex;
   flex-wrap: wrap;
+
+  //
+  //
+  .app {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    //
+
+    .todo-container {
+      width: 50%;
+      margin-top: 40px;
+      min-height: 40vh;
+      padding: 3vh 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      // background-color: rgb(240, 237, 233);
+
+      // box-shadow: 0.5rem 0.5rem rgb(0, 49, 185);
+      //
+      h1 {
+        font-family: "CoffekanRegular";
+        font-size: 5rem;
+        font-weight: 600;
+      }
+      h2 {
+        margin-top: 1em;
+        font-family: "Poppins-Light";
+        font-size: 1.2rem;
+        font-weight: 100;
+        text-transform: uppercase;
+      }
+
+      .input-container {
+        margin-top: 2rem;
+      }
+      input {
+        color: rgb(44, 44, 44);
+        padding: 10px 25px;
+        margin-top: 2rem;
+        border-radius: 5rem;
+        border: 0.5px solid #000;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: "PoppinsThin";
+      }
+    }
+    //
+    //
+    p {
+      margin-top: 1rem;
+      color: rgb(172, 172, 172);
+      font-family: "PoppinsThin";
+      font-weight: 600;
+      border-bottom: 1px dotted rgb(172, 172, 172);
+    }
+
+    //
+  }
 }
 
 /* ---------------- */
@@ -36,38 +99,3 @@ body::-webkit-scrollbar-thumb {
 
 /* --------------- */
 /* --------------- */
-
-.todo-container {
-  margin-top: 2rem;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  h1 {
-    font-family: "CoffekanRegular";
-    font-size: 3rem;
-    font-weight: 600;
-  }
-  h2 {
-    margin-top: 1em;
-    font-family: "Poppins-Light";
-    font-size: 1.2rem;
-    font-weight: 100;
-    text-transform: uppercase;
-  }
-  p {
-    margin-top: 2rem;
-  }
-  .input-container {
-    margin-top: 2rem;
-  }
-  input {
-    color: red;
-    padding: 10px 25px;
-    margin-top: 2rem;
-    border-radius: 5rem;
-    border: 0.5px solid #000;
-  }
-}
