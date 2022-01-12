@@ -258,4 +258,83 @@ const Form = ({ onSubmit }) => {
 export default Form;
 ```
 
-#### GRab the value from block 1 and pass it to block 2, using the text, through the onSubmit
+<br>
+
+#### GRab the value from block 1 and pass it to block 2, using the 'const text', through the onSubmit
+
+```javascript
+//block 1
+const useInputValue = (initialState) => {
+  const [value, setValue] = useState(initialState);
+  return {
+    value,
+    onChange: (e) => setValue(e.target.value),
+  };
+};
+
+const Form = ({ onSubmit }) => {
+  // block 2
+  const text = useInputValue("");
+
+  //
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit(text.value);
+      }}
+      className="form-input"
+    >
+      <input {...text} className="form-input" placeholder="tell me something" />
+    </form>
+  );
+};
+```
+
+<br>
+<br>
+
+#### Now go to the Todo.jsx
+
+<br>
+
+- define the state and set it as an empty array
+
+```javascript
+const [todos, setTodos] = useState([]);
+```
+
+<br>
+
+#### Now inside the form component
+
+- add the event **onSubmit** that is being passed as props from the **Form.jsx**
+
+```javascript
+ <Form onSubmit={(text) =>
+```
+
+##### the following line, is going to create a new array, that we are going set: 'setTodos ', the new values to
+
+```javascript
+setTodos([{ text, complete: false }]);
+```
+
+#### at the beginning we are going to create a new 'todo'
+
+```javascript
+([{  text, complete: false
+```
+
+#### and then we're gonna keep all the original 'todo' values that were there
+
+```javascript
+ ...todos])}
+```
+
+<br>
+<br>
+
+```javascript
+<Form onSubmit={(text) => setTodos([{ text, complete: false }, ...todos])} />
+```
