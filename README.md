@@ -422,3 +422,33 @@ export default Form;
 <br>
 
 [<img src="./src/img/todo-basic.gif"/>]()
+
+<br>
+<br>
+
+---
+
+<br>
+
+#### Now lets implement the button to remove the items
+
+- The way we can do that, is by calling the **setValue** and passing an empty string: **setValue("")**
+
+<br>
+
+```javascript
+return {
+  value,
+  onChange: (e) => setValue(e.target.value),
+  //to remove
+  resetValue: () => setValue(""),
+};
+```
+
+#### Now we dont really want to pass the 'resetValue:' to the input field here below
+
+```javascript
+<input {...text} placeholder="tell me something" />
+```
+
+#### So what we can do is

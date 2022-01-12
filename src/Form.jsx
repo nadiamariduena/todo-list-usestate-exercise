@@ -6,6 +6,8 @@ const useInputValue = (initialState) => {
   return {
     value,
     onChange: (e) => setValue(e.target.value),
+    //to remove
+    resetValue: () => setValue(""),
   };
 };
 
