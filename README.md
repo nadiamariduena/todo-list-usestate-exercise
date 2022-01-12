@@ -430,7 +430,7 @@ export default Form;
 
 <br>
 
-#### Now lets implement the button to remove the items
+#### Now lets implement the button to reset the input area after we type something and click enter
 
 - The way we can do that, is by calling the **setValue** and passing an empty string: **setValue("")**
 
@@ -473,3 +473,11 @@ const text = useInputValue("");
       }}
     >
 ```
+
+#### before
+
+[<img src="./src/img/todo-basic.gif"/>]()
+
+#### after
+
+[<img src="./src/img/todo-reset.gif"/>]()
