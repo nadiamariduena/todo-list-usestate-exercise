@@ -20,9 +20,8 @@ const Form = ({ onSubmit }) => {
         e.preventDefault();
         onSubmit(text.value);
       }}
-      className="form-input"
     >
-      <input {...text} className="form-input" placeholder="tell me something" />
+      <input {...text} placeholder="tell me something" />
     </form>
   );
 };

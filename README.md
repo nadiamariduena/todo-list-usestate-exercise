@@ -314,19 +314,19 @@ const [todos, setTodos] = useState([]);
  <Form onSubmit={(text) =>
 ```
 
-##### the following line, is going to create a new array, that we are going set: 'setTodos ', the new values to
+##### the following line, is going to create a new array, that we are going set: 'setTodos([{', the new values to
 
 ```javascript
 setTodos([{ text, complete: false }]);
 ```
 
-#### at the beginning we are going to create a new 'todo'
+#### at the beginning we are going to create a new 'todos'
 
 ```javascript
 ([{  text, complete: false
 ```
 
-#### and then we're gonna keep all the original 'todo' values that were there
+#### and then we're gonna keep all the original 'todos' values that were there
 
 ```javascript
  ...todos])}
@@ -337,4 +337,13 @@ setTodos([{ text, complete: false }]);
 
 ```javascript
 <Form onSubmit={(text) => setTodos([{ text, complete: false }, ...todos])} />
+```
+
+<br>
+<br>
+
+#### Now let's render the 'todos' values
+
+```javascript
+
 ```

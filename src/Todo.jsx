@@ -15,6 +15,13 @@ const Todo = () => {
         <Form
           onSubmit={(text) => setTodos([{ text, complete: false }, ...todos])}
         />
+        <div>
+          {todos.map(({ text }) => (
+            <div key={text} className="todo-result">
+              <p>{text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
