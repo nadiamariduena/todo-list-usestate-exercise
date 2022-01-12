@@ -82,6 +82,31 @@ body {
     //
   }
 }
+//@at-root//@at-root
+
+.btn-card {
+  cursor: pointer;
+  margin-top: 30px;
+  padding: 12px 24px;
+
+  border-bottom: 0;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+
+  font-weight: 100;
+  font-size: calc(7px + 1vmin);
+  text-transform: lowercase;
+  font-style: italic;
+  letter-spacing: 2px;
+  color: rgb(29, 29, 29);
+  background-color: transparent;
+}
+
+.btn-card:hover {
+  font-size: calc(7px + 1vmin);
+  color: rgba(46, 46, 46, 0.562);
+}
 
 /* ---------------- */
 body::-webkit-scrollbar {

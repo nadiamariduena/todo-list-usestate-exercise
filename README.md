@@ -445,7 +445,10 @@ return {
 };
 ```
 
-#### Now we dont really want to pass the 'resetValue:' to the input field here below
+<br>
+<br>
+
+#### But we dont really want to pass the 'resetValue:' to the input field here below
 
 ```javascript
 <input {...text} placeholder="tell me something" />
@@ -474,6 +477,8 @@ const text = useInputValue("");
     >
 ```
 
+<br>
+
 #### before
 
 [<img src="./src/img/todo-basic.gif"/>]()
@@ -481,3 +486,61 @@ const text = useInputValue("");
 #### after
 
 [<img src="./src/img/todo-reset.gif"/>]()
+
+<br>
+
+#### This is what we have
+
+```javascript
+import React, { useState } from "react";
+
+//block 1
+const useInputValue = (initialState) => {
+  const [value, setValue] = useState(initialState);
+  return {
+    value,
+    onChange: (e) => setValue(e.target.value),
+    //to remove
+    resetValue: () => setValue(""),
+  };
+};
+
+const Form = ({ onSubmit }) => {
+  // block 2
+  const { resetValue, ...text } = useInputValue("");
+
+  //
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit(text.value);
+        resetValue();
+      }}
+    >
+      <input {...text} placeholder="tell me something" />
+    </form>
+  );
+};
+
+export default Form;
+```
+
+<br>
+<br>
+
+---
+
+<br>
+
+### To Remove / Clear
+
+- You will have to add this: setTodos([])
+
+```javascript
+<button className="btn-card" type="button" onClick={() => setTodos([])}>
+  clear
+</button>
+```
+
+[<img src="./src/img/todo-clear.gif"/>]()

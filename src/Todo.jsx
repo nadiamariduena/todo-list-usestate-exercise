@@ -6,6 +6,7 @@ const Todo = () => {
   const [todos, setTodos] = useState([]);
 
   //
+
   //
   return (
     <>
@@ -23,6 +24,9 @@ const Todo = () => {
           </div>
         ))}
       </div>
+      <button className="btn-card" type="button" onClick={() => setTodos([])}>
+        clear
+      </button>
     </>
   );
 };
